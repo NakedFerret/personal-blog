@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{{ .Title }}</title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- syntax highlighting CSS -->
+    <link rel="stylesheet" href="/css/syntax.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/main.css">
+
+  </head>
+  <body>
+
+    <div class="site">
+
+      {{ block "main" . }}{{ end }}
+
+      <div class="footer">
+        <div class="contact">
+          <p>
+            Gonzalo Andreani<br />
+            Android Engineer<br />
+          </p>
+        </div>
+        <div class="contact">
+          <p>
+            <a href="https://github.com/NakedFerret">github.com/NakedFerret</a><br />
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>

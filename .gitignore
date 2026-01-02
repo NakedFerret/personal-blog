@@ -1,0 +1,13 @@
+.claude
+
+# Hugo
+/public/
+/resources/_gen/
+.hugo_build.lock
+
+# Migration script
+migrate-posts.py
+
+# OS
+.DS_Store
+Thumbs.db

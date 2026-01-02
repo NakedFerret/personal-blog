@@ -1,0 +1,19 @@
+{{ define "main" }}
+
+{{ partial "header.html" (dict "current" "blog" "context" .) }}
+
+<div id="post-list">
+
+  <ul class="posts">
+    {{ range where site.RegularPages "Section" "posts" }}
+    <li>
+      <span>{{ .Date.Format "02 Jan 2006" }}</span> &raquo;
+      <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <p>{{ .Summary }}</p>
+    </li>
+    {{ end }}
+  </ul>
+
+</div>
+
+{{ end }}

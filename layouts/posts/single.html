@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+{{ partial "header.html" (dict "current" "blog" "context" .) }}
+
+<div class="row clearfix">
+
+  <div class="column two-thirds post">
+
+    <div class="title">
+      <h1>{{ .Title }}</h1>
+      <p class="meta">{{ .Date.Format "02 Jan 2006" }}</p>
+    </div>
+
+    {{ .Content }}
+
+  </div>
+
+  <div class="column third">
+
+    <div class="title">
+      <h1> Recent Blog Posts</h1>
+    </div>
+
+    <ul class="posts">
+      {{ range first 10 (where site.RegularPages "Section" "posts") }}
+      <li>
+        <span>{{ .Date.Format "02 Jan 2006" }}</span> &raquo;
+        <a href="{{ .Permalink }}">{{ .Title }}</a>
+      </li>
+      {{ end }}
+    </ul>
+
+  </div>
+
+</div>
+
+{{ end }}

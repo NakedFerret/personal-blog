@@ -1,0 +1,11 @@
+/* hello.css */
+.body {
+    background-color: #fdf3e6;
+}
+
+
+/* Used to hide and show elements */
+
+.hidden {
+    visibility: hidden;
+}

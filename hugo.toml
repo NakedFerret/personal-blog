@@ -1,0 +1,17 @@
+baseURL = 'https://yourdomain.com/'
+languageCode = 'en-us'
+title = 'Gonzalo Andreani'
+
+[params]
+  author = 'Gonzalo Andreani'
+  description = 'Android Engineer'
+
+[markup]
+  [markup.highlight]
+    anchorLineNos = false
+    codeFences = true
+    noClasses = false  # Use CSS classes (Pygments-compatible)
+    style = 'pygments'
+
+  [markup.goldmark.renderer]
+    unsafe = true  # Allow raw HTML in markdown
