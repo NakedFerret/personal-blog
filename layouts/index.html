@@ -31,8 +31,9 @@
       <ul class="posts">
         {{ range first 10 (where site.RegularPages "Section" "posts") }}
         <li>
-          <span>{{ .Date.Format "02 Jan 2006" }}</span> &raquo;
           <a href="{{ .Permalink }}">{{ .Title }}</a>
+          <br>
+          <span>{{ .Date.Format "02 Jan 2006" }}</span>
         </li>
         {{ end }}
       </ul>

@@ -2,9 +2,9 @@
 
 {{ partial "header.html" (dict "current" "blog" "context" .) }}
 
-<div class="row clearfix">
+<div class="post">
 
-  <div class="column two-thirds post">
+  <div>
 
     <div class="title">
       <h1>{{ .Title }}</h1>
@@ -15,7 +15,7 @@
 
   </div>
 
-  <div class="column third">
+  <div class="recents">
 
     <div class="title">
       <h1> Recent Blog Posts</h1>
@@ -24,7 +24,7 @@
     <ul class="posts">
       {{ range first 10 (where site.RegularPages "Section" "posts") }}
       <li>
-        <span>{{ .Date.Format "02 Jan 2006" }}</span> &raquo;
+        <span>{{ .Date.Format "02 Jan 2006" }}</span>
         <a href="{{ .Permalink }}">{{ .Title }}</a>
       </li>
       {{ end }}
