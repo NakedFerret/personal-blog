@@ -8,10 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- syntax highlighting CSS -->
-    <link rel="stylesheet" href="/css/syntax.css">
+    {{ $syntax := resources.Get "css/syntax.css" | fingerprint }}
+    <link rel="stylesheet" href="{{ $syntax.RelPermalink }}" integrity="{{ $syntax.Data.Integrity }}">
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/css/main.css">
+    {{ $main := resources.Get "css/main.css" | fingerprint }}
+    <link rel="stylesheet" href="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}">
 
     <link rel="icon" type="image/x-icon" href="/img/ico.webp">
 
@@ -38,11 +40,14 @@
     </div>
 
     <!-- Zdog 3D rendering library -->
-    <script src="/js/zdog.dist.min.js"></script>
+    {{ $zdog := resources.Get "js/zdog.dist.min.js" | fingerprint }}
+    <script src="{{ $zdog.RelPermalink }}" integrity="{{ $zdog.Data.Integrity }}"></script>
     <!-- Zfont text rendering plugin -->
-    <script src="/js/zfont.min.js"></script>
+    {{ $zfont := resources.Get "js/zfont.min.js" | fingerprint }}
+    <script src="{{ $zfont.RelPermalink }}" integrity="{{ $zfont.Data.Integrity }}"></script>
     <!-- Logo animation script -->
-    <script src="/js/logo-animation.js"></script>
+    {{ $logo := resources.Get "js/logo-animation.js" | fingerprint }}
+    <script src="{{ $logo.RelPermalink }}" integrity="{{ $logo.Data.Integrity }}"></script>
 
   </body>
 </html>
