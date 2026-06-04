@@ -49,5 +49,20 @@
     {{ $logo := resources.Get "js/logo-animation.js" | fingerprint }}
     <script src="{{ $logo.RelPermalink }}" integrity="{{ $logo.Data.Integrity }}"></script>
 
+    <!-- Analytics (CDN) -->
+    <!--
+    <script type="module">
+      import { start } from 'https://esm.sh/wip-analytics@0.0.1';
+      start('analytics.internal.wipanalytics.net', 'personal-blog');
+    </script>
+    -->
+
+    <!-- Analytics (local test build) -->
+    {{ $wipAnalytics := resources.Get "js/wip-analytics.js" }}
+    <script type="module">
+      import { start } from '{{ $wipAnalytics.Permalink }}';
+      start('analytics.internal.wipanalytics.net', 'personal-blog');
+    </script>
+
   </body>
 </html>

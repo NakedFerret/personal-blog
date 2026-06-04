@@ -302,6 +302,10 @@ blockquote {
     margin: 0 0;
 }
 
+.post .recents {
+    margin-top: 8rem;
+}
+
 .post pre {
     border: 1px solid #ddd;
     background-color: #eef;
@@ -320,6 +324,10 @@ blockquote {
 .post ol {
     margin-left: 1.35em;
     margin-bottom: 1rem;
+}
+
+.post li {
+    margin-bottom: 0.25em;
 }
 
 .post code {
