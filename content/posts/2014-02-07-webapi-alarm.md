@@ -74,7 +74,6 @@ navigator.mozSetMessageHandler("alarm", function (alarm) {
 });
 ```
 
-The demo uses an alarm to show a notification 5 seconds in the future. Check out the [source code](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/05) for more information.
+The demo uses an alarm to show a notification 5 seconds in the future. Check out the [source code](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/05) for more information.
 
 _TODO_: write code to install application to Firefox. Alarms API is cannot be used on a website and instead the app has to be installed to the browser
-

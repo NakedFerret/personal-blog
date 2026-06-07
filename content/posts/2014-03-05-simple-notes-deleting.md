@@ -136,4 +136,4 @@ function addNoteToList(note) {
 
 ## Demo
 
-Try the demo [here (works in Firefox!)](/demos/22/) and see the source [here](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/22).
+Try the demo [here (works in Firefox!)](/demos/22/) and see the source [here](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/22).

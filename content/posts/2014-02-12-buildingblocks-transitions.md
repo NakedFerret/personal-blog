@@ -165,4 +165,4 @@ Finally, the following CSS will tie up the animations to the classes
 
 ## Presto
 
-As always, feel free to [try the demo](/demos/08/) and examine the [source code](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/08).
+As always, feel free to [try the demo](/demos/08/) and examine the [source code](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/08).

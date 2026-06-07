@@ -93,4 +93,4 @@ Surprisingly, that is all the spots that needed to be changed. My code turned ou
 
 ## Demo
 
-Try the [demo](/demos/23/) and explore the [source](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/22).
+Try the [demo](/demos/23/) and explore the [source](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/22).

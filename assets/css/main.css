@@ -295,11 +295,54 @@ blockquote {
 .post .title h1 {
     margin: 0 0;
     margin-bottom: 0.5em;
+    line-height: 1.1;
 }
 
 .post .title p {
     color: #aaa;
     margin: 0 0;
+}
+
+/* TABLE OF CONTENTS */
+
+.toc {
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    background: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 90%;
+}
+
+.toc summary {
+    font-weight: bold;
+    cursor: pointer;
+    margin-bottom: 0.5rem;
+}
+
+.toc nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+.toc nav li {
+    margin-bottom: 0.25rem;
+    line-height: 1.4;
+}
+
+.toc nav li li {
+    padding-left: 1.25rem;
+}
+
+.toc nav a {
+    text-decoration: none;
+    color: #555;
+}
+
+.toc nav a:hover {
+    color: #000;
+    text-decoration: underline;
 }
 
 .post .recents {

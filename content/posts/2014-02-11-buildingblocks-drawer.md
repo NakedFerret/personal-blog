@@ -164,4 +164,4 @@ document.querySelector('#nav-message').addEventListener ('click', function () {
 });
 ```
 
-[Try the demo](/demos/07/) and check out the [source code](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/07).
+[Try the demo](/demos/07/) and check out the [source code](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/07).

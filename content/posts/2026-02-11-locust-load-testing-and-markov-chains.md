@@ -1,7 +1,7 @@
 ---
 date: '2026-02-11T03:24:14Z'
 title: 'Locust Load Testing and Markov Chains'
-url: /blog/36
+url: /blog/36/
 ---
 
 

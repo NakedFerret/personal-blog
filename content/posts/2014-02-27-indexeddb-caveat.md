@@ -52,4 +52,4 @@ After the code is run and the result is received, the object will be updated wit
 
 ## Demo
 
-The demo of the code using this functionality is [here](/demos/18/). It behaves the same way but the code is a little clearer and more straightforward. [Source Code](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/18)
+The demo of the code using this functionality is [here](/demos/18/). It behaves the same way but the code is a little clearer and more straightforward. [Source Code](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/18)

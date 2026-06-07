@@ -1,18 +1,9 @@
-{{ $current := .current }}
-{{ $context := .context }}
+{{ $current := .current }} {{ $context := .context }}
 
 <div class="header">
-
-  {{ range $context.Site.Data.navigation }}
-    {{ $class := "extra" }}
-    {{ if eq $current .name }}
-      {{ $class = "extra current" }}
-    {{ end }}
+    {{ range $context.Site.Data.navigation }} {{ $class := "extra" }} {{ if eq
+    $current .name }} {{ $class = "extra current" }} {{ end }}
 
     <a class="{{ $class }}" href="{{ .dest }}"> {{ .name }} </a>
-  {{ end }}
-
-  <div class="logo-container">
-    <canvas id="logo-canvas"></canvas>
-  </div>
+    {{ end }}
 </div>

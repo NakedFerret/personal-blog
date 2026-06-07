@@ -306,4 +306,4 @@ function prepareEditNoteSection() {
 
 ## Demo
 
-As always, check out the [demo](/demos/25/) and the [source](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/25).
+As always, check out the [demo](/demos/25/) and the [source](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/25).

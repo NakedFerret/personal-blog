@@ -1,68 +1,83 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>{{ .Title }}</title>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>{{ .Title }}</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <!-- syntax highlighting CSS -->
-    {{ $syntax := resources.Get "css/syntax.css" | fingerprint }}
-    <link rel="stylesheet" href="{{ $syntax.RelPermalink }}" integrity="{{ $syntax.Data.Integrity }}">
+        <!-- syntax highlighting CSS -->
+        {{ $syntax := resources.Get "css/syntax.css" | fingerprint }}
+        <link
+            rel="stylesheet"
+            href="{{ $syntax.RelPermalink }}"
+            integrity="{{ $syntax.Data.Integrity }}"
+        />
 
-    <!-- Custom CSS -->
-    {{ $main := resources.Get "css/main.css" | fingerprint }}
-    <link rel="stylesheet" href="{{ $main.RelPermalink }}" integrity="{{ $main.Data.Integrity }}">
+        <!-- Custom CSS -->
+        {{ $main := resources.Get "css/main.css" | fingerprint }}
+        <link
+            rel="stylesheet"
+            href="{{ $main.RelPermalink }}"
+            integrity="{{ $main.Data.Integrity }}"
+        />
 
-    <link rel="icon" type="image/x-icon" href="/img/ico.webp">
+        <link rel="icon" type="image/x-icon" href="/img/ico.webp" />
+    </head>
+    <body>
+        <div class="site">
+            {{ block "main" . }}{{ end }}
 
-  </head>
-  <body>
-
-    <div class="site">
-
-      {{ block "main" . }}{{ end }}
-
-      <div class="footer">
-        <div class="contact">
-          <p>
-            Gonzalo Andreani<br />
-            Fullstack Consultant<br />
-          </p>
+            <div class="footer">
+                <div class="contact">
+                    <p>
+                        Gonzalo Andreani<br />
+                        Fullstack Consultant<br />
+                    </p>
+                </div>
+                <div class="contact">
+                    <p>
+                        <a href="https://github.com/gonzo-beans"
+                            >github.com/gonzo-beans</a
+                        ><br />
+                    </p>
+                </div>
+            </div>
         </div>
-        <div class="contact">
-          <p>
-            <a href="https://github.com/NakedFerret">github.com/NakedFerret</a><br />
-          </p>
-        </div>
-      </div>
-    </div>
 
-    <!-- Zdog 3D rendering library -->
-    {{ $zdog := resources.Get "js/zdog.dist.min.js" | fingerprint }}
-    <script src="{{ $zdog.RelPermalink }}" integrity="{{ $zdog.Data.Integrity }}"></script>
-    <!-- Zfont text rendering plugin -->
-    {{ $zfont := resources.Get "js/zfont.min.js" | fingerprint }}
-    <script src="{{ $zfont.RelPermalink }}" integrity="{{ $zfont.Data.Integrity }}"></script>
-    <!-- Logo animation script -->
-    {{ $logo := resources.Get "js/logo-animation.js" | fingerprint }}
-    <script src="{{ $logo.RelPermalink }}" integrity="{{ $logo.Data.Integrity }}"></script>
+        <!-- Zdog 3D rendering library -->
+        {{ $zdog := resources.Get "js/zdog.dist.min.js" | fingerprint }}
+        <script
+            src="{{ $zdog.RelPermalink }}"
+            integrity="{{ $zdog.Data.Integrity }}"
+        ></script>
+        <!-- Zfont text rendering plugin -->
+        {{ $zfont := resources.Get "js/zfont.min.js" | fingerprint }}
+        <script
+            src="{{ $zfont.RelPermalink }}"
+            integrity="{{ $zfont.Data.Integrity }}"
+        ></script>
+        <!-- Logo animation script -->
+        {{ $logo := resources.Get "js/logo-animation.js" | fingerprint }}
+        <script
+            src="{{ $logo.RelPermalink }}"
+            integrity="{{ $logo.Data.Integrity }}"
+        ></script>
 
-    <!-- Analytics (CDN) -->
-    <!--
+        <!-- Analytics (CDN) -->
+        <!--
     <script type="module">
       import { start } from 'https://esm.sh/wip-analytics@0.0.1';
       start('analytics.internal.wipanalytics.net', 'personal-blog');
     </script>
     -->
 
-    <!-- Analytics (local test build) -->
-    {{ $wipAnalytics := resources.Get "js/wip-analytics.js" }}
-    <script type="module">
-      import { start } from '{{ $wipAnalytics.Permalink }}';
-      start('analytics.internal.wipanalytics.net', 'personal-blog');
-    </script>
-
-  </body>
+        <!-- Analytics (local test build) -->
+        {{ $wipAnalytics := resources.Get "js/wip-analytics.js" }}
+        <script type="module">
+            import { start } from "{{ $wipAnalytics.Permalink }}";
+            start("analytics.internal.wipanalytics.net", "personal-blog");
+        </script>
+    </body>
 </html>

@@ -108,6 +108,4 @@ objStr.openCursor().onsuccess = function() {
 
 ## Demo
 
-The demo does not take advantage of the key ranges, but it creates an index on the name property of the `Person` object. Try the [demo here (Firefox OS only)](/demos/17/) and find the source [here](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/17).
-
-
+The demo does not take advantage of the key ranges, but it creates an index on the name property of the `Person` object. Try the [demo here (Firefox OS only)](/demos/17/) and find the source [here](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/17).

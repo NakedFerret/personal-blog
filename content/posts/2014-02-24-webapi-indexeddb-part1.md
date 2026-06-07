@@ -81,5 +81,5 @@ Closing the database is not required, but it is good practice. Use `db.close()`
 
 ## Demo
 
-The demo for this post focuses only on opening and closing the database. It creates an object store but does not add, remove, or get any items from it. All of that will be covered in the next post. The demo is [here (may work on modern browsers)](/demos/15/) and, of course, [the source](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/15).
+The demo for this post focuses only on opening and closing the database. It creates an object store but does not add, remove, or get any items from it. All of that will be covered in the next post. The demo is [here (may work on modern browsers)](/demos/15/) and, of course, [the source](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/15).
 )

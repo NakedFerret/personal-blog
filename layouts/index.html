@@ -1,47 +1,60 @@
-{{ define "main" }}
-
-{{ partial "header.html" (dict "current" "home" "context" .) }}
+{{ define "main" }} {{ partial "header.html" (dict "current" "home" "context" .)
+}}
 
 <div id="home">
+    <div class="row clearfix">
+        <div class="column two-thirds">
+            <div class="row clearfix">
+                <div class="title">
+                    <h1>A product is brewing!</h1>
+                </div>
 
-  <div class="row clearfix">
+                <p>
+                    I'm working on and building a new SaaS! Get in contact if
+                    you're interested in a quick and easy solution for web
+                    analytics, log query and storage, and alerting.
+                </p>
 
-    <div class="column two-thirds">
+                <p>
+                    Contact me via email on my
+                    <a href="https://github.com/gonzo-beans">github profile</a>.
+                </p>
+            </div>
 
-      <div class="row clearfix">
+            <div class="row clearfix">
+                <div class="title">
+                    <h1>Who am I?</h1>
+                </div>
 
-        <p>I'm slowly resurrecting this blog. Hoping to add more writing to my routines.</p>
+                <p>
+                    I'm a quiet and curious nerd. I'm a web developer by trade
+                    but I like all sorts of programming. I won't admit to
+                    writing code by hand in this day and age but I review all
+                    the code I commit to git.
+                </p>
+            </div>
 
-        <div class="title">
-          <h1> Who am I? </h1>
+            <div class="logo-container">
+                <canvas id="logo-canvas"></canvas>
+            </div>
         </div>
 
-        <p>Curious more than anything and slow going. Adverse to routines but I hold some. Trying to consume less and make more. Have and always will enjoy programming.</p>
+        <div class="column third">
+            <div class="title">
+                <h1>Recent Blog Posts</h1>
+            </div>
 
-      </div>
-
+            <ul class="posts">
+                {{ range first 10 (where site.RegularPages "Section" "posts") }}
+                <li>
+                    <a href="{{ .Permalink }}">{{ .Title }}</a>
+                    <br />
+                    <span>{{ .Date.Format "02 Jan 2006" }}</span>
+                </li>
+                {{ end }}
+            </ul>
+        </div>
     </div>
-
-    <div class="column third">
-
-      <div class="title">
-        <h1> Recent Blog Posts</h1>
-      </div>
-
-      <ul class="posts">
-        {{ range first 10 (where site.RegularPages "Section" "posts") }}
-        <li>
-          <a href="{{ .Permalink }}">{{ .Title }}</a>
-          <br>
-          <span>{{ .Date.Format "02 Jan 2006" }}</span>
-        </li>
-        {{ end }}
-      </ul>
-
-    </div>
-
-  </div>
-
 </div>
 
 {{ end }}

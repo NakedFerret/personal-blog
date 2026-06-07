@@ -76,6 +76,4 @@ Additionally, the UI alerts the user when a note has been successfully saved by 
 
 ## Demo
 
-Once again, this application can be tested in a web browser [here](/demos/20/) and the source code can be found [here](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/20)
-
-
+Once again, this application can be tested in a web browser [here](/demos/20/) and the source code can be found [here](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/20)

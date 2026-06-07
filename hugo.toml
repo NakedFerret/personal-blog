@@ -1,6 +1,7 @@
 baseURL = 'https://blog.andreani.in/'
 languageCode = 'en-us'
 title = 'Gonzalo Andreani'
+buildFuture = true
 
 [params]
   author = 'Gonzalo Andreani'
@@ -15,3 +16,8 @@ title = 'Gonzalo Andreani'
 
   [markup.goldmark.renderer]
     unsafe = true  # Allow raw HTML in markdown
+
+  [markup.tableOfContents]
+    endLevel = 3
+    ordered = false
+    startLevel = 2

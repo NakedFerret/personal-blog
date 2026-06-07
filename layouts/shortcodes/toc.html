@@ -1,0 +1,9 @@
+{{ $toc := .Page.TableOfContents }}
+{{ if gt (len (plainify $toc)) 0 }}
+<aside class="toc">
+  <details open>
+    <summary>Table of Contents</summary>
+    {{ $toc }}
+  </details>
+</aside>
+{{ end }}

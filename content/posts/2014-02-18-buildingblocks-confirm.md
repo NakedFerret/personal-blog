@@ -130,5 +130,4 @@ var requestClear = function() {
 
 ## Try it out
 
-This [demo](/demos/11/) can be tested in the browser (just the building block functionality of course), and the source code [resides here](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/11).
-
+This [demo](/demos/11/) can be tested in the browser (just the building block functionality of course), and the source code [resides here](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/11).

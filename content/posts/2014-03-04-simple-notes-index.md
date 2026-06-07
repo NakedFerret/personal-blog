@@ -149,4 +149,4 @@ After a successful save operation, `backButton.click()` and `reloadNotes()` were
 
 ## Demo
 
-The demo can be tested [here (firefox browser friendly)](/demos/21/) and the source code is [here](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/21)
+The demo can be tested [here (firefox browser friendly)](/demos/21/) and the source code is [here](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/21)

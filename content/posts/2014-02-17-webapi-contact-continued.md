@@ -5,7 +5,7 @@ date:   2014-02-17 12:00:00
 url: /blog/12/
 ---
 
-[Last post](/blog/11/) we explored the Contact API, but ran into permissions problems. This post, we'll show the fix and show the last part of the contacts API. [Try the (working) demo](/demos/10/) and check out the [source code](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/10).
+[Last post](/blog/11/) we explored the Contact API, but ran into permissions problems. This post, we'll show the fix and show the last part of the contacts API. [Try the (working) demo](/demos/10/) and check out the [source code](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/10).
 
 ## Wiping the slate
 
@@ -56,4 +56,4 @@ Here's the explanation. The contact API is a `privileged` API. An application ca
 
 ## All is Well
 
-As stated in the beginning of the post, [demo](/demos/10/) and [source](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/10).
+As stated in the beginning of the post, [demo](/demos/10/) and [source](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/10).

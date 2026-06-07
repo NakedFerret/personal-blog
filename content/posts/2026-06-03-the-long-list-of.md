@@ -1,7 +1,7 @@
 ---
-date: "2026-06-03T00:00:00-00:00"
-title: "The long list of bad decisions I made for my new SaaS"
-url: /blog/39
+date: '2026-06-08T00:00:00-00:00'
+title: 'The long list of bad decisions I made for my new SaaS'
+url: /blog/38
 # draft: true
 ---
 
@@ -9,13 +9,15 @@ I'm about to launch a new analytics SaaS. Easily the biggest project I've ever t
 
 I have humble goals for myself: get two subscribers by the end of the year. There's six months left to the year so if I can average bringing in a third-of-a-person each month I got that goal in the bag. If you know any halflings hit me up.
 
-## Look ma, no containers
+{{< toc >}}
+
+## Going against conventional wisdom. Look ma, no containers
 
 The weird thing about my architecture design is that I opted to segregate tenants into their own VMs instead of their own containers. I'm probably leaving money on the table but I'd rather do it this way since it simplifies security issues relating to tenant isolation.
 
 That said, it's not the only weird part of the architecture. I'm using `Svelte` instead of `React` and I'm rendering server templates as well. It's _almost_ a homemade server-side rendering setup. The first page waits for the js bundle to load and render, but there's no client side fetching of APIs on first load. The backend server provides it as props instead. It's a taped together SSR experience that sounds way worse than it feels to use.
 
-## Did I paint myself into a corner?
+## The long list. Did I paint myself into a corner?
 
 So far just with those two decisions I'm going wayyy against conventional wisdom. I would have saved way more time if I took off the shelve tech and integrated it together.
 
@@ -98,9 +100,9 @@ I use dev mode when I want to quickly iterate on frontend changes without going 
 
 The initial page load takes around 4.5 seconds, but the updates are instant (edits are off-screen so just trust me ok?). For that reason this mode is really just reserved for tweaking interface details.
 
-## What's next
+## What's next for the product?
 
-I've deployed some instances but I haven't launched yet. I'm going to ask some friends if they'd like to test out the service ✨ for free ✨. Maybe I can get them hooked on it and turn them into clients. If one of them converts I'll be super happy. 
+I've deployed some instances but I haven't officially launched yet. I'm going to ask some friends if they'd like to test out the service ✨ for free ✨. Maybe I can get them hooked on it and turn them into clients. If one of them converts I'll be super happy.
 
 If you'd like to try it out reach out to me via the email in my [github profile](https://github.com/gonzo-beans).
 

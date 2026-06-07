@@ -46,4 +46,4 @@ As a little bonus, the library emits `status-showed` and `status-hidden` events 
 
 ## Wrapping Up
 
-The status was used in the demos, as described in the beginning of the post, to give the user feedback about the Contact API calls. The demo is available [here (does not work in browsers)](/demos/12/) and the [source is on Github](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/12).
+The status was used in the demos, as described in the beginning of the post, to give the user feedback about the Contact API calls. The demo is available [here (does not work in browsers)](/demos/12/) and the [source is on Github](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/12).

@@ -33,6 +33,4 @@ activity.onerror = function() {
 };
 ```
 
-And that's it! You can [try the demo](/demos/09/) but the WebActivity API is not supported by any web browser. Source code is [here](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/09).
-
-
+And that's it! You can [try the demo](/demos/09/) but the WebActivity API is not supported by any web browser. Source code is [here](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/09).

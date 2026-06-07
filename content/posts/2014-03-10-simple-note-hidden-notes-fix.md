@@ -73,4 +73,4 @@ editModeDone.addEventListener("click", function() {
 
 ## Demo
 
-Try the [demo](/demos/24/) and the source is at [Github](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/24).
+Try the [demo](/demos/24/) and the source is at [Github](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/24).

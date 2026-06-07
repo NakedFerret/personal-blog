@@ -142,4 +142,4 @@ function Person(name, id) {
 }
 ```
 
-The object store holding all the `Person` objects uses the `keyPath` strategy. [Try it here (Firefox OS only)](/demos/16/) and the source is [here](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/16).
+The object store holding all the `Person` objects uses the `keyPath` strategy. [Try it here (Firefox OS only)](/demos/16/) and the source is [here](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/16).

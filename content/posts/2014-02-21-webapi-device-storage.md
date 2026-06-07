@@ -121,4 +121,4 @@ request.onerror = function () {
 
 ## API Showcase
 
-The demo for this API uses the methods mention above on the `pictures` storage. The reason for this is that I was unable to use the `sdcard` storage area. After a bit of head scratching I figured out how to convert an image from a URL into a `Blob`. The demo resides [here (only works in the simulator](/demos/14) and the source code is at [Github](https://github.com/NakedFerret/NakedFerret.github.io/tree/master/demos/14).
+The demo for this API uses the methods mention above on the `pictures` storage. The reason for this is that I was unable to use the `sdcard` storage area. After a bit of head scratching I figured out how to convert an image from a URL into a `Blob`. The demo resides [here (only works in the simulator](/demos/14) and the source code is at [Github](https://github.com/gonzo-beans/NakedFerret.github.io/tree/master/demos/14).
