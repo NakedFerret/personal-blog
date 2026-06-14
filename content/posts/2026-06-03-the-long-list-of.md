@@ -2,6 +2,7 @@
 date: '2026-06-08T00:00:00-00:00'
 title: 'The long list of bad decisions I made for my new SaaS'
 url: /blog/38
+tags: ['saas-launch']
 # draft: true
 ---
 
@@ -83,7 +84,7 @@ The last weird trick is the developing experience in the SaaS client's portal. T
 There's two modes to it. The first one is the **deployed mode**. This one uses the bundled version of the frontend. These assets are fingerprinted and cached "forever" by the browser so navigating between pages feels snappy:
 
 <video controls class="">
-    <source src="/videos/posts/39/wip-analytics-pre-v1-vm-demo_small.mp4">
+    <source src="/videos/posts/38/wip-analytics-pre-v1-vm-demo_small.mp4">
 </video>
 
 I'm not breaking any speed records but keep in mind I'm using a remote server in another continent. 
@@ -95,7 +96,7 @@ The second mode for the client's portal is the **"dev" mode**. This is the more 
 I use dev mode when I want to quickly iterate on frontend changes without going through a whole container rebuild/deploy cycle. I just simply change the URL from localhost:8080 to localhost:8081.
 
 <video controls class="">
-    <source src="/videos/posts/39/wip-analytics-pre-v1-dev-demo_small.mp4">
+    <source src="/videos/posts/38/wip-analytics-pre-v1-dev-demo_small.mp4">
 </video>
 
 The initial page load takes around 4.5 seconds, but the updates are instant (edits are off-screen so just trust me ok?). For that reason this mode is really just reserved for tweaking interface details.

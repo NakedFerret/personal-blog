@@ -2,19 +2,27 @@
 date: '2026-06-09T00:00:00-00:00'
 title: 'Almost realtime deploy logs in my SaaS'
 url: /blog/39
+tags: ['saas-launch']
 ---
 
 A totally unnecessary but cool change to my internal tools: realtime deploy lgos in my SaaS.
 
-**TODO: Example of a deployment from DigitalOcean**
+Here's what it looks like:
+
+<video controls class="">
+    <source src="/videos/posts/39/wipa-analytics-pre-v1-deploy-demo_small.mp4">
+</video>
+
 
 {{< toc >}}
 
 ## Storage for deploy logs: a sqlite column.
 
-Each tenant's host is provisioned and configured by a single internal service. This one service keeps a sqlite DB the the deploy history. The deployment logs are just stored as text in the sqlite db.
+Each tenant's host is provisioned and configured by a single internal service. This one service keeps inside a sqlite DB the deploy history. The deployment logs are just stored as text in the sqlite db.
 
-To prevent the service's individual log lines from mixing between deploys, we only write the deploy logs to stdout and to the db when it's all finished. 
+We only write the deployment logs to stdout and to the db when it's all finished. Writing it out to stdout all at once is key to prevent multiple deploys from getting mixed up in the internal service's logs. 
+
+However, this also means that we can't query the database for an in-progress deployment. When a deployment takes more than a minute, it would be nice to see its progress.
 
 ## The storage approach
 
@@ -26,7 +34,7 @@ We might be pre-optimizing here, but we could flush to the DB only the bits that
 UPDATE deployments SET logs = logs || ? WHERE deployment_id = ?
 ```
 
-And it's a pretty small golang struct for this functionality:
+We can wrap the buffer we write to with a small struct that tracks the offset since the last flush.
 
 ```go
 package deploy
@@ -67,39 +75,73 @@ func (b *logBuffer) String() string {
 }
 ```
 
+If this code looks sloppy it's probably because it is. I picked up golang last year! I'm still learning.
+
 ## The presentation
 
-This one is a bit trickier. I just use htmx to poll the log contents in the backend html template.
+This one is a bit trickier. In the internal service, I didn't opt for using a full web framework and use `htmx` instead.
+
+With `htmx` we could use the `hx-trigger="every 1s"` approach. This works BUT we can't use the page template directly: This one renders the whole html doc we return to the client:  
 
 ```go-html-template
-<div id="deploy-content" 
-  {{if not .Deployment.DeployEnd}} 
-   	hx-get="/deployments/{{.Deployment.DeploymentID}}/content" 
-    hx-trigger="every 1s" 
-    hx-swap="outerHTML"
-  {{end}}
->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Deployment {{.Deployment.DeploymentID | printf "%.8s"}}</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="https://unpkg.com/htmx.org@2.0.4"></script>
+</head>
+<body class="deploy-detail">
+  <h1>Deployment {{.Deployment.DeploymentID | printf "%.8s"}}</h1>
+  <!-- Logs go here -->
+</body>
+</html>
 ```
 
-The template that renders the page includes <html>, <body>, and <head>. We need to reference the child template to make it work:
+We just have to break this information out into another template:
 
 ```go-html-template
-<body>
-  <h1>Deployment {{.Deployment.DeploymentID}}</h1>
+<div id="deploy-content"
+  {{if not .Deployment.DeployEnd}} 
+    hx-get="/deployments/{{.Deployment.DeploymentID}}/content" 
+    hx-trigger="every 1s" 
+    hx-swap="outerHTML"
+  {{end}}>
+  <div class="meta">
+    <!-- snip: this renders the bar with the deployment start, end, duration, etc. -->
+  </div>
+  <pre id="deploy-logs">{{.Deployment.Logs}}</pre>
+</div>
+```
+
+This template will poll until the deployment finishes thanks to the use of `{{if not .Deployment.DeployEnd}}`.
+
+This template is available at `GET /deployments/$DeploymentID/content`, so we can use that in the `hx-get` above and in the page's template:
+
+```go-html-template
+<!DOCTYPE html>
+<html>
+<head>
+  <!--snip-->
+</head>
+<body class="deploy-detail">
+  <h1>Deployment {{.Deployment.DeploymentID | printf "%.8s"}}</h1>
+  
   <div id="deploy-content" 
     hx-get="/deployments/{{.Deployment.DeploymentID}}/content" 
     hx-trigger="load every 1s" 
     hx-swap="outerHTML"
   >
-    <span>Loading…</span>
+    <div class="meta"><span>Loading…</span></div>
   </div>
 </body>
+</html>
 ```
-
-It's hacky but it works.
 
 ## Future improvements
 
-This approach hijacks my scroll when I'm looking at logs _during_ an active deploy. I'll probably swap out htmx for something more integrated in the future. For now this works ok.
+We could clean this up a bit if we used [templ's fragments](https://templ.guide/syntax-and-usage/fragments/). These allow us to "tag" part of a template and render just that. In this case we could collapse these two templates into one file and reduce the duplication. Something to do another day! 
+
+Also, this approach hijacks my scroll when I'm looking at logs _during_ an active deploy. I'll probably swap out htmx for something more integrated in the future. For now this works ok.
 
 `logBuffer` is probably not optimal. I'm not familiar enough with go to understand the performance implications of the buffer so that's something to look into in the future.

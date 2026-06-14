@@ -1,0 +1,20 @@
+{{ define "main" }}
+
+{{ partial "header.html" (dict "current" "blog" "context" .) }}
+
+<div id="post-list">
+  <div class="title">
+    <h1>Tags</h1>
+  </div>
+
+  <ul class="posts">
+    {{ range .Data.Terms.Alphabetical }}
+    <li class="summary-post">
+      <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+      <span>({{ .Count }})</span>
+    </li>
+    {{ end }}
+  </ul>
+</div>
+
+{{ end }}
